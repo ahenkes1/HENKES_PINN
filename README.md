@@ -3,8 +3,6 @@ Code of the publication "Physics informed neural networks for continuum micromec
 
 Please cite the following paper:
 
-.. code-block:: bash
-
     @article{henkes2022physics,
       title={Physics informed neural networks for continuum micromechanics},
       author={Henkes, Alexander and Wessels, Henning and Mahnken, Rolf},
