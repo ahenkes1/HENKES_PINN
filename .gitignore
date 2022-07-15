@@ -129,5 +129,7 @@ dmypy.json
 .pyre/
 
 # src stuff
+src/.idea
 .idea/workspace.xml
 .src/idea/workspace.xml
+.src/saved_nets/CPINN
