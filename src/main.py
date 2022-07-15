@@ -12,16 +12,17 @@ import sys
 import matplotlib.pyplot as plt
 import tensorflow as tf
 import tensorflow_probability as tfp
-import src.dataset
-import src.lbfgs
-import src.cpinn
-import src.plot
-import src.material_network
 from datetime import datetime
 import time
 import random
 import numpy as np
 from tensorflow.python.framework import random_seed
+
+import dataset
+import bfgs
+import cpinn
+
+# import plot
 
 
 logger = tf.get_logger()
@@ -94,7 +95,7 @@ def main():
         adaptive=ADAPTIVE,
     )
 
-    dataset = None
+    input_dataset = None
     if ADAPTIVE:
 
         ADAITER = 2
@@ -126,7 +127,7 @@ def main():
 
         for iteration in range(ADAITER):
             NO_OF_COLL_POINTS = int(COLL_REG / SPLIT)
-            dataset = src.dataset.domain_split_dataset(
+            input_dataset = dataset.domain_split_dataset(
                 no_collocation_points=NO_OF_COLL_POINTS,
                 no_split_per_side=SPLIT,
                 epsilon=0,
@@ -215,7 +216,7 @@ def main():
                         int(NO_REG_POINTS**2 / (SPLIT**2)),
                     )
 
-                dataset = src.dataset.domain_split_dataset(
+                input_dataset = dataset.domain_split_dataset(
                     no_collocation_points=NO_REG_POINTS,
                     no_split_per_side=SPLIT,
                     epsilon=0,
@@ -224,7 +225,7 @@ def main():
 
             total_points = 0
             for i in range(SPLIT**2):
-                total_points += dataset.element_spec[0]["data"][str(i)][
+                total_points += input_dataset.element_spec[0]["data"][str(i)][
                     "coords_x"
                 ].shape[0]
 
@@ -234,8 +235,8 @@ def main():
             if iteration != 0:
                 BFGS_max_iter = int(BFGS_ADA_RAND)
 
-            training_dataset_bfgs = dataset.repeat(int(BFGS_max_iter))
-            func = src.lbfgs.function_factory(
+            training_dataset_bfgs = input_dataset.repeat(int(BFGS_max_iter))
+            func = bfgs.function_factory(
                 lbfgs_model=model, train_x=training_dataset_bfgs
             )
 
@@ -266,13 +267,13 @@ def main():
             func.assign_new_model_parameters(results.position)
 
     else:
-        dataset = src.dataset.domain_split_dataset(
+        input_dataset = dataset.domain_split_dataset(
             no_collocation_points=NO_OF_COLL_POINTS,
             no_split_per_side=SPLIT,
             epsilon=0,
         )
 
-    training_dataset_bfgs = dataset.repeat(int(BFGS_max_iter))
+    training_dataset_bfgs = input_dataset.repeat(int(BFGS_max_iter))
 
     tf.print(
         "\n\tTotal number of points:",
@@ -282,7 +283,7 @@ def main():
     complete_history = None
     if not ADAPTIVE:
         tf.print("\nBFGS\n")
-        func = src.lbfgs.function_factory(
+        func = bfgs.function_factory(
             lbfgs_model=model, train_x=training_dataset_bfgs
         )
 
@@ -316,13 +317,15 @@ def main():
         complete_history = func.history
 
     NO_OF_COLL_POINTS = 128
-    dataset = src.dataset.domain_split_dataset(
+    input_dataset = dataset.domain_split_dataset(
         no_collocation_points=NO_OF_COLL_POINTS,
         no_split_per_side=SPLIT,
         epsilon=0,
     )
 
-    prediction, l2_error_energy, rel_l2_error_energy = model.predict(x=dataset)
+    prediction, l2_error_energy, rel_l2_error_energy = model.predict(
+        x=input_dataset
+    )
 
     print("\nPrediction time:", datetime.now() - start_time_prediction, "\n")
 
@@ -429,7 +432,7 @@ def main():
     plt.subplot(3, 3, 1)
     for n in prediction:
         current_net = prediction[n]
-        current_domain = next(iter(dataset))[0]["data"][n]
+        current_domain = next(iter(input_dataset))[0]["data"][n]
         plt.scatter(
             x=current_domain["coords_x"],
             y=current_domain["coords_y"],
@@ -446,7 +449,7 @@ def main():
     plt.subplot(3, 3, 2)
     for n in prediction:
         current_net = prediction[n]
-        current_domain = next(iter(dataset))[0]["data"][n]
+        current_domain = next(iter(input_dataset))[0]["data"][n]
         plt.scatter(
             x=current_domain["coords_x"],
             y=current_domain["coords_y"],
@@ -463,7 +466,7 @@ def main():
     plt.subplot(3, 3, 3)
     for n in prediction:
         current_net = prediction[n]
-        current_domain = next(iter(dataset))[0]["data"][n]
+        current_domain = next(iter(input_dataset))[0]["data"][n]
         plt.scatter(
             x=current_domain["coords_x"],
             y=current_domain["coords_y"],
@@ -480,7 +483,7 @@ def main():
     plt.subplot(3, 3, 4)
     for n in prediction:
         current_net = prediction[n]
-        current_domain = next(iter(dataset))[0]["data"][n]
+        current_domain = next(iter(input_dataset))[0]["data"][n]
         plt.scatter(
             x=current_domain["coords_x"],
             y=current_domain["coords_y"],
@@ -497,7 +500,7 @@ def main():
     plt.subplot(3, 3, 5)
     for n in prediction:
         current_net = prediction[n]
-        current_domain = next(iter(dataset))[0]["data"][n]
+        current_domain = next(iter(input_dataset))[0]["data"][n]
         plt.scatter(
             x=current_domain["coords_x"],
             y=current_domain["coords_y"],
@@ -514,7 +517,7 @@ def main():
     plt.subplot(3, 3, 6)
     for n in prediction:
         current_net = prediction[n]
-        current_domain = next(iter(dataset))[0]["data"][n]
+        current_domain = next(iter(input_dataset))[0]["data"][n]
         plt.scatter(
             x=current_domain["coords_x"],
             y=current_domain["coords_y"],
@@ -606,12 +609,11 @@ def create_model(
             for col in range(split):
                 flux_y_nets.append(row + col * split)
 
-    model = src.cpinn.CPINN(
+    model = cpinn.CPINN(
         hidden_units=n_hidden_layers,
         width=n_units,
         activation=activation,
         initialization=initialization,
-        # matnet=mat_net,
         split=split,
         no_nets=split * split,
         ux_nets=ux_nets,
