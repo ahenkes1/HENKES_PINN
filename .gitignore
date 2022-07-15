@@ -131,5 +131,7 @@ dmypy.json
 # src stuff
 src/.idea
 .idea/workspace.xml
-.src/idea/workspace.xml
-.src/saved_nets/CPINN
+src/idea/workspace.xml
+src/saved_nets/CPINN/*
+src/saved_nets/
+
