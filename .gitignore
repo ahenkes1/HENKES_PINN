@@ -129,4 +129,5 @@ dmypy.json
 .pyre/
 
 # src stuff
-./src/.idea/workspace.xml
+.idea/workspace.xml
+.src/idea/workspace.xml

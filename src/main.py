@@ -22,9 +22,6 @@ import dataset
 import bfgs
 import cpinn
 
-# import plot
-
-
 logger = tf.get_logger()
 logger.setLevel(logging.ERROR)
 
@@ -59,8 +56,8 @@ def main():
     NO_OF_COLL_POINTS = args.points
     INITIALIZATION = "lecun_uniform"
     ACTIVATION = "tanh"
-    EAGER = args.debug
-    ADAPTIVE = args.adaptive
+    EAGER = bool(args.debug)
+    ADAPTIVE = bool(args.adaptive)
     BFGS_max_iter = args.iter
 
     if EAGER:
@@ -77,10 +74,12 @@ def main():
         + "x"
         + str(N_UNITS)
     )
+
     try:
         os.mkdir(SAVE_PATH)
     except OSError:
         print("Creation of the directory %s failed" % SAVE_PATH)
+        print("Please create the directory 'saved_nets/CPINN'.")
         sys.exit("DIRECTORY WRONG!")
     else:
         print("Successfully created the directory %s " % SAVE_PATH)
@@ -645,6 +644,10 @@ def get_input():
         "published in https://doi.org/10.1016/j.cma.2022.114790 "
         "by Alexander Henkes and Henning Wessels from TU Braunschweig "
         " and Rolf Mahnken from University of Paderborn."
+        "This code utilizes JIT compilation with XLA. Use the following "
+        "command to use it: "
+        "'XLA_FLAGS=--xla_gpu_cuda_data_dir=/usr/local/cuda-11.7 python3 "
+        "main.py'. Be sure to point to the correct cuda path!"
     )
 
     parser = argparse.ArgumentParser(
@@ -653,10 +656,48 @@ def get_input():
     )
 
     parser.add_argument(
-        "--timesteps",
-        default=20,
+        "--split",
+        default=1,
         type=int,
-        help="Timesteps for spiking activations.",
+        help="Number of domain splits. If 'split=1', a standard PINN is used, "
+        "otherwise a CPINN is used.",
+    )
+
+    parser.add_argument(
+        "--hidden",
+        default=4,
+        type=int,
+        help="Number of hidden layers used in each (sub-) network",
+    )
+
+    parser.add_argument(
+        "--points",
+        default=128,
+        type=int,
+        help="Number of collocation points used per dimension.",
+    )
+
+    parser.add_argument(
+        "--debug",
+        default=0,
+        type=int,
+        help="Activate EAGER mode for debugging. 0 defaults to graph mode.",
+    )
+
+    parser.add_argument(
+        "--adaptive",
+        default=0,
+        type=int,
+        help="Activate adaptive collocation points. 0 defaults to fixed "
+        "points.",
+    )
+
+    parser.add_argument(
+        "--iter",
+        default=1000,
+        type=int,
+        help="Number of BFGS iterations. ATTENTION: also line search steps "
+        "are printed!",
     )
 
     arguments = parser.parse_args()
