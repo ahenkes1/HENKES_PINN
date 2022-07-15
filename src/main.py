@@ -2,7 +2,13 @@
 "Physics informed neural networks for continuum micromechanics"
 published in https://doi.org/10.1016/j.cma.2022.114790
 by Alexander Henkes and Henning Wessels from TU Braunschweig
-and Rolf Mahnken from University of Paderborn."""
+and Rolf Mahnken from University of Paderborn.
+
+This code utilizes JIT compilation with XLA.
+Use the following command to use it:
+'XLA_FLAGS=--xla_gpu_cuda_data_dir=/usr/local/cuda-11.7 python3 main.py'.
+Be sure to point to the correct cuda path!
+"""
 
 import argparse
 import logging
@@ -100,8 +106,8 @@ def main():
         ADAITER = 2
         COLL_REG = 128
         COLL_ADA = 128
-        BFGS_ADA_BASE = 5e2
-        BFGS_ADA_RAND = 5e2
+        BFGS_ADA_BASE = BFGS_max_iter  # 5e2
+        BFGS_ADA_RAND = BFGS_ADA_BASE  # 5e2
         GAMMA = 2.25
         adaptive = int(128**2 / (GAMMA + 1) / (SPLIT**2))
         regular = int(GAMMA * adaptive)
@@ -625,10 +631,15 @@ def create_model(
         adaptive=adaptive,
     )
 
+    if debug:
+        jit = False
+        print("JIT DEACTIVATED!")
+    else:
+        jit = True
     model.compile(
         optimizer=tf.keras.optimizers.Adam(),
         run_eagerly=debug,
-        jit_compile=True,
+        jit_compile=jit,
     )
 
     model.summary()
@@ -672,7 +683,7 @@ def get_input():
 
     parser.add_argument(
         "--points",
-        default=128,
+        default=32,
         type=int,
         help="Number of collocation points used per dimension.",
     )
