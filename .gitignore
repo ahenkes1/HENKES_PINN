@@ -134,4 +134,4 @@ src/.idea
 src/idea/workspace.xml
 src/saved_nets/CPINN/*
 src/saved_nets/
-
+.idea/
