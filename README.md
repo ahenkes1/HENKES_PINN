@@ -44,6 +44,6 @@ Execute via
 # Using XLA
 The code may run using XLA (faster) using the following flag:
 
-    $XLA_FLAGS=--xla_gpu_cuda_data_dir=/usr/local/cuda-11.2 python3 main.py
+    $XLA_FLAGS=--xla_gpu_cuda_data_dir=/usr/local/cuda-11.2 python3 main.py --help
 
 where the correct cuda path and version have to be used.
