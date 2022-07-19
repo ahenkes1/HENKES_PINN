@@ -558,14 +558,14 @@ def main():
         )
     )
     plt.tight_layout()
-    plt.savefig("Contour.pdf")
+    plt.savefig(SAVE_PATH + "/contour.pdf")
     plt.show()
 
     if not ADAPTIVE:
-        plt.figure(1)
+        plt.figure(2)
         plt.semilogy(complete_history)
         plt.show()
-        plt.savefig("loss.pdf")
+        plt.savefig(SAVE_PATH + "/loss.pdf")
 
     return None
 
@@ -709,8 +709,8 @@ def get_input():
         "--iter",
         default=1000,
         type=int,
-        help="Number of BFGS iterations. ATTENTION: also line search steps "
-        "are printed!",
+        help="Number of BFGS iterations. ATTENTION: the line search steps "
+        "are printed as well!",
     )
 
     arguments = parser.parse_args()
