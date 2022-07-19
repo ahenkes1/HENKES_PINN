@@ -37,7 +37,7 @@ Build via
 
 Execute via
 
-    $docker run --gpus all -it --rm --mounttype=bind,source='/home/ah/HENKES_PINN/src',target='/home/' henkes/pinn:1.0.0 
+    $docker run --gpus all -it --rm --mount type=bind,source='/home/ah/HENKES_PINN/src',target='/home/' henkes/pinn:1.0.0 
     $cd home
     $python3 main.py --help
 

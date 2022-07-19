@@ -558,12 +558,14 @@ def main():
         )
     )
     plt.tight_layout()
+    plt.savefig("Contour.pdf")
     plt.show()
 
     if not ADAPTIVE:
         plt.figure(1)
         plt.semilogy(complete_history)
         plt.show()
+        plt.savefig("loss.pdf")
 
     return None
 
