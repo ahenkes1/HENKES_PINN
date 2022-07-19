@@ -13,4 +13,33 @@ Please cite the following paper:
       publisher={Elsevier}
     }
 
-And the code using the CITATION.cff file.
+... and the code using the CITATION.cff file.
+
+# Requirements
+The requirements can be found in
+    
+    src/requirements.txt
+
+and may be installed via pip:
+
+        pip install -r requirements.txt
+
+# Docker image
+Build via
+
+    $cd src
+    $docker build -f ./Dockerfile --pull -t henkes/pinn:1.0.0 .
+
+
+Execute via
+
+    $docker run --gpus all -it --rm --mounttype=bind,source='/home/ah/HENKES_PINN/src',target='/home/' henkes/pinn:1.0.0 
+    $cd home
+    $python3 main.py --help
+
+# Using XLA
+The code may run using XLA (faster) using the following flag:
+
+    XLA_FLAGS=--xla_gpu_cuda_data_dir=/usr/local/cuda-11.2 python3 main.py
+
+where the correct cuda path and version have to be used.
