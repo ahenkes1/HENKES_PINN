@@ -670,7 +670,7 @@ def get_input():
         "--split",
         default=1,
         type=int,
-        help="Number of domain splits. If 'split=1', a standard PINN is used, "
+        help="Number of domain splits. If 'split 1', a standard PINN is used, "
         "otherwise a CPINN is used.",
     )
 
@@ -692,15 +692,15 @@ def get_input():
         "--debug",
         default=0,
         type=int,
-        help="Activate EAGER mode for debugging. 0 defaults to graph mode.",
+        help="Activate EAGER mode for debugging. '0' defaults to graph mode.",
     )
 
     parser.add_argument(
         "--adaptive",
         default=0,
         type=int,
-        help="Activate adaptive collocation points. 0 defaults to fixed "
-        "points.",
+        help="Activate adaptive collocation points by setting to '1'. "
+        "'0' defaults to fixed points.",
     )
 
     parser.add_argument(
