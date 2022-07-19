@@ -25,6 +25,10 @@ and may be installed via pip:
         pip install -r requirements.txt
 
 # Docker image
+For the Docker image, the official TensorFlow image is needed:
+
+    https://www.tensorflow.org/install/docker
+
 Build via
 
     $cd src
