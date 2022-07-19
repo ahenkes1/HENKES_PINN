@@ -22,7 +22,7 @@ The requirements can be found in
 
 and may be installed via pip:
 
-        pip install -r requirements.txt
+    $pip install -r requirements.txt
 
 # Docker image
 For the Docker image, the official TensorFlow image is needed:
@@ -44,6 +44,6 @@ Execute via
 # Using XLA
 The code may run using XLA (faster) using the following flag:
 
-    XLA_FLAGS=--xla_gpu_cuda_data_dir=/usr/local/cuda-11.2 python3 main.py
+    $XLA_FLAGS=--xla_gpu_cuda_data_dir=/usr/local/cuda-11.2 python3 main.py
 
 where the correct cuda path and version have to be used.
