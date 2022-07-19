@@ -657,7 +657,7 @@ def get_input():
         " and Rolf Mahnken from University of Paderborn."
         "This code utilizes JIT compilation with XLA. Use the following "
         "command to use it: "
-        "'XLA_FLAGS=--xla_gpu_cuda_data_dir=/usr/local/cuda-11.7 python3 "
+        "'XLA_FLAGS=--xla_gpu_cuda_data_dir=/usr/local/cuda-11.2 python3 "
         "main.py'. Be sure to point to the correct cuda path!"
     )
 
