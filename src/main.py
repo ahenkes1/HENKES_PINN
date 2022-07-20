@@ -644,7 +644,7 @@ def create_model(
         jit_compile=jit,
     )
 
-    model.summary()
+    # model.summary()
 
     return model
 

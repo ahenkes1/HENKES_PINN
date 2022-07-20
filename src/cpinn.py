@@ -314,6 +314,8 @@ class CPINN(tf.keras.Model):
         else:
             raise RuntimeError("Something went wrong ...")
 
+        for ann in self.ANN:
+            self.ANN[ann].summary(line_length=79)
         tf.print()
         self.built = True
         self.trainable = True
