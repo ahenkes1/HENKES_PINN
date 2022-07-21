@@ -135,3 +135,6 @@ src/idea/workspace.xml
 src/saved_nets/CPINN/*
 src/saved_nets/
 .idea/
+src/output_files
+src/.bash_history
+src/.keras

@@ -18,7 +18,7 @@ Please cite the following paper:
 # Requirements
 The requirements can be found in
     
-    src/requirements.txt
+    requirements.txt
 
 and may be installed via pip:
 
@@ -31,15 +31,19 @@ For the Docker image, the official TensorFlow image is needed:
 
 Build via
 
-    $cd src
     $docker build -f ./Dockerfile --pull -t henkes/pinn:1.0.0 .
 
 
 Execute via
 
-    $docker run --gpus all -it --rm --mount type=bind,source='/home/ah/HENKES_PINN/src',target='/home/' henkes/pinn:1.0.0 
-    $cd home
-    $python3 main.py --help
+    $docker run --gpus all -it -v YOUR_LOCAL_OUTPUT_FOLDER:/home/docker_user/src/saved_nets/CPINN/ --rm henkes/pinn:1.0.0 --help
+
+where 'YOUR_LOCAL_OUTPUT_FOLDER' is an absolute path to a directory on your 
+system. This will show the help.
+
+Execute the code using standard parameters as
+
+    $docker run --gpus all -it -v YOUR_LOCAL_OUTPUT_FOLDER:/home/docker_user/src/saved_nets/CPINN/ --rm henkes/pinn:1.0.0 
 
 # Using XLA
 The code may run using XLA (faster) using the following flag:
@@ -47,3 +51,4 @@ The code may run using XLA (faster) using the following flag:
     $XLA_FLAGS=--xla_gpu_cuda_data_dir=/usr/local/cuda-11.2 python3 main.py --help
 
 where the correct cuda path and version have to be used.
+The Docker image runs XLA natively.
