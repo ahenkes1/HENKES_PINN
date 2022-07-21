@@ -21,3 +21,11 @@ version: 1.0
 doi: xxx
 date-released: 2022-07-xxx
 url: "https://github.com/ahenkes1/HENKES_PINN"
+references:
+  - title: xxx
+    authors:
+      - family-names: xxx
+        given-names: xxx
+    type: software
+    license: ???
+    url: https://github.com/xxx
