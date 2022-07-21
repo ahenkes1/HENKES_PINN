@@ -22,12 +22,12 @@ The requirements can be found in
 
 and may be installed via pip:
 
-    $pip install -r requirements.txt
+    pip install -r requirements.txt
 
 # Docker image
 You can download a pre-built Docker image via:
 
-    $docker pull heneks/pinn:1.0.0
+    docker pull ahenkes1/pinn:1.0.0
 
 If you want to build the Docker image, the official TensorFlow image is needed:
 
@@ -35,23 +35,23 @@ If you want to build the Docker image, the official TensorFlow image is needed:
 
 Build via
 
-    $docker build -f ./Dockerfile --pull -t henkes/pinn:1.0.0 .
+    docker build -f ./Dockerfile --pull -t ahenkes1/pinn:1.0.0 .
 
 Execute via
 
-    $docker run --gpus all -it -v YOUR_LOCAL_OUTPUT_FOLDER:/home/docker_user/src/saved_nets/CPINN/ --rm henkes/pinn:1.0.0 --help
+    docker run --gpus all -it -v YOUR_LOCAL_OUTPUT_FOLDER:/home/docker_user/src/saved_nets/CPINN/ --rm henkes/pinn:1.0.0 --help
 
 where 'YOUR_LOCAL_OUTPUT_FOLDER' is an absolute path to a directory on your 
 system. This will show the help.
 
 Execute the code using standard parameters as
 
-    $docker run --gpus all -it -v YOUR_LOCAL_OUTPUT_FOLDER:/home/docker_user/src/saved_nets/CPINN/ --rm henkes/pinn:1.0.0 
+    docker run --gpus all -it -v YOUR_LOCAL_OUTPUT_FOLDER:/home/docker_user/src/saved_nets/CPINN/ --rm henkes/pinn:1.0.0 
 
 # Using XLA
 The code may run using XLA (faster) using the following flag:
 
-    $XLA_FLAGS=--xla_gpu_cuda_data_dir=/usr/local/cuda-11.2 python3 main.py --help
+    XLA_FLAGS=--xla_gpu_cuda_data_dir=/usr/local/cuda-11.2 python3 main.py --help
 
 where the correct cuda path and version have to be used.
 The Docker image runs XLA natively.
