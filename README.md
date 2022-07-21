@@ -25,14 +25,17 @@ and may be installed via pip:
     $pip install -r requirements.txt
 
 # Docker image
-For the Docker image, the official TensorFlow image is needed:
+You can download a pre-built Docker image via:
+
+    $docker pull heneks/pinn:1.0.0
+
+If you want to build the Docker image, the official TensorFlow image is needed:
 
     https://www.tensorflow.org/install/docker
 
 Build via
 
     $docker build -f ./Dockerfile --pull -t henkes/pinn:1.0.0 .
-
 
 Execute via
 
