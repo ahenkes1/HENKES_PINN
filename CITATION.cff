@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 title: "Physics informed neural networks for continuum micromechanics"
-message: "If you use this software, please cite it using the metadata from this file."
+message: "If you use this software, please cite both the article from preferred-citation and the software itself."
 type: software
 authors:
   - given-names: 'Alexander '
@@ -21,11 +21,36 @@ version: 1.0
 doi: xxx
 date-released: 2022-07-xxx
 url: "https://github.com/ahenkes1/HENKES_PINN"
+preferred-citation:
+  authors:
+      - given-names: 'Alexander '
+        family-names: Henkes
+        email: a.henkes@tu-braunschweig.de
+        affiliation: TU Braunschweig
+        orcid: ' https://orcid.org/0000-0003-4615-9271'
+      - given-names: Henning
+        family-names: Wessels
+        email: h.wessels@tu-braunschweig.de
+        affiliation: TU Braunschweig
+        orcid: ' https://orcid.org/0000-0002-2542-1130 '
+      - given-names: Rolf
+        family-names: Mahnken
+        email: mahnken@ltm.upb.de
+        affiliation: University of Paderborn
+  title: "Software paper about My Research Software"
+  type: article
 references:
-  - title: xxx
+  - title: {Array programming with {NumPy}}
     authors:
-      - family-names: xxx
-        given-names: xxx
-    type: software
-    license: ???
-    url: https://github.com/xxx
+      - name: {Charles R. Harris and K. Jarrod Millman and St{\'{e}}fan J.
+                 van der Walt and Ralf Gommers and Pauli Virtanen and David
+                 Cournapeau and Eric Wieser and Julian Taylor and Sebastian
+                 Berg and Nathaniel J. Smith and Robert Kern and Matti Picus
+                 and Stephan Hoyer and Marten H. van Kerkwijk and Matthew
+                 Brett and Allan Haldane and Jaime Fern{\'{a}}ndez del
+                 R{\'{i}}o and Mark Wiebe and Pearu Peterson and Pierre
+                 G{\'{e}}rard-Marchant and Kevin Sheppard and Tyler Reddy and
+                 Warren Weckesser and Hameer Abbasi and Christoph Gohlke and
+                 Travis E. Oliphant},
+    type: article
+
