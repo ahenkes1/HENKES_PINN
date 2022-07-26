@@ -40,9 +40,10 @@ authors:
       title: "Software paper about My Research Software"
 type: article
 references:
-    - title: {Array programming with {NumPy}}
-        authors:
-            - name: {Charles R. Harris and K. Jarrod Millman and St{\'{e}}fan J.
+    - title: Array programming with NumPy
+      authors:
+        - name:  "Charles R. Harris and K. Jarrod Millman and
+                    St{\'{e}}fan J.
                      van der Walt and Ralf Gommers and Pauli Virtanen and David
                      Cournapeau and Eric Wieser and Julian Taylor and Sebastian
                      Berg and Nathaniel J. Smith and Robert Kern and Matti Picus
@@ -51,6 +52,6 @@ references:
                      R{\'{i}}o and Mark Wiebe and Pearu Peterson and Pierre
                      G{\'{e}}rard-Marchant and Kevin Sheppard and Tyler Reddy and
                      Warren Weckesser and Hameer Abbasi and Christoph Gohlke and
-                     Travis E. Oliphant},
-        type: article
+                     Travis E. Oliphant}"
+      type: article
 
