@@ -1,24 +1,57 @@
-"cff-version": {1.2.0}
-"title": {"Physics informed neural networks for continuum micromechanics"}
-message: "If you use this software, please cite both the article from preferred-citation and the software itself."
-"type": {software}
-"authors": {
-    - "given-names": "Alexander"
-      "family-names": "Henkes"
-      "email": "a.henkes@tu-braunschweig.de"
-      "affiliation": "TU Braunschweig"
-      "orcid": "https://orcid.org/0000-0003-4615-9271"
-    - given-names: Henning
-      family-names: Wessels
-      email: h.wessels@tu-braunschweig.de
-      affiliation: TU Braunschweig
-      orcid: ' https://orcid.org/0000-0002-2542-1130 '
-    - given-names: Rolf
-      family-names: Mahnken
-      email: mahnken@ltm.upb.de
-      affiliation: University of Paderborn
-}
-version: 1.0
-doi: xxx
-date-released: 2022-07-xxx
+cff-version: "1.2.0"
+title: "Physics informed neural networks for continuum micromechanics"
+message: "If you use this software, please cite both the article from
+preferred-citation and the software itself."
+type: "software"
+
+authors: 
+    - given-names: "Alexander"
+      family-names: "Henkes"
+      email: "a.henkes@tu-braunschweig.de"
+      affiliation: "TU Braunschweig"
+      orcid: "https://orcid.org/0000-0003-4615-9271"
+
+    - given-names: "Henning"
+      family-names: "Wessels"
+      email: "h.wessels@tu-braunschweig.de"
+      affiliation: "TU Braunschweig"
+      orcid: "https://orcid.org/0000-0002-2542-1130"
+
+    - given-names: "Rolf"
+      family-names: "Mahnken"
+      email: "mahnken@ltm.upb.de"
+      affiliation: "University of Paderborn"
+
+version: "1.0"
+doi: "10.5281/zenodo.1003150"
+date-released: "2022-07-26"
 url: "https://github.com/ahenkes1/HENKES_PINN"
+
+preferred-citation:
+    authors:
+        - given-names: 'Alexander '
+          family-names: Henkes
+          email: a.henkes@tu-braunschweig.de
+          affiliation: TU Braunschweig
+          orcid: ' https://orcid.org/0000-0003-4615-9271'
+
+        - given-names: Henning
+          family-names: Wessels
+          email: h.wessels@tu-braunschweig.de
+          affiliation: TU Braunschweig
+          orcid: ' https://orcid.org/0000-0002-2542-1130 '
+
+        - given-names: Rolf
+          family-names: Mahnken
+          email: mahnken@ltm.upb.de
+          affiliation: University of Paderborn
+
+    title: "Physics informed neural networks for continuum micromechanics"
+    journal: "Computer Methods in Applied Mechanics and Engineering"
+    publisher:
+        name: "Elsevier"
+    volume: "393"
+    pages: "114790"
+    year: "2022"
+    type: "article"
+
