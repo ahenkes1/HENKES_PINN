@@ -62,5 +62,5 @@ some GPUs, which are not capable of double precision calculations, the BFGS
 algorithm used may interupt before the desired number of iterations is reached.
 In this case, either switch your GPU, use CPU computation or try mixed precision
 loss scaling described in 
-    https://www.tensorflow.org/guide/mixed_precision#loss_scaling
+    https://www.tensorflow.org/guide/mixed_precision#loss_scaling.
 There is no plan to tackle this problem in the next future.
