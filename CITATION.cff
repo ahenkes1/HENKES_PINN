@@ -4,19 +4,19 @@ message: "If you use this software, please cite both the article from preferred-
 type: software
 authors:
     - given-names: 'Alexander '
-    family-names: Henkes
-    email: a.henkes@tu-braunschweig.de
-    affiliation: TU Braunschweig
-    orcid: ' https://orcid.org/0000-0003-4615-9271'
+      family-names: Henkes
+      email: a.henkes@tu-braunschweig.de
+      affiliation: TU Braunschweig
+      orcid: ' https://orcid.org/0000-0003-4615-9271'
     - given-names: Henning
-    family-names: Wessels
-    email: h.wessels@tu-braunschweig.de
-    affiliation: TU Braunschweig
-    orcid: ' https://orcid.org/0000-0002-2542-1130 '
+      family-names: Wessels
+      email: h.wessels@tu-braunschweig.de
+      affiliation: TU Braunschweig
+      orcid: ' https://orcid.org/0000-0002-2542-1130 '
     - given-names: Rolf
-    family-names: Mahnken
-    email: mahnken@ltm.upb.de
-    affiliation: University of Paderborn
+      family-names: Mahnken
+      email: mahnken@ltm.upb.de
+      affiliation: University of Paderborn
 version: 1.0
 doi: xxx
 date-released: 2022-07-xxx
