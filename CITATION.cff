@@ -98,6 +98,8 @@ references:
             Martin~Wicke and
             Yuan~Yu and
             Xiaoqiang~Zheng}"
-}
+    - title: "Matplotlib: A 2D graphics environment"
+      authors: "Hunter, J. D."
+
 
 
