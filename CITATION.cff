@@ -43,14 +43,14 @@ references:
     - title: Array programming with NumPy
       authors:
         - name:  "Charles R. Harris and K. Jarrod Millman and
-                    St{\'{e}}fan J.
+                    Stefan J.
                      van der Walt and Ralf Gommers and Pauli Virtanen and David
                      Cournapeau and Eric Wieser and Julian Taylor and Sebastian
                      Berg and Nathaniel J. Smith and Robert Kern and Matti Picus
                      and Stephan Hoyer and Marten H. van Kerkwijk and Matthew
-                     Brett and Allan Haldane and Jaime Fern{\'{a}}ndez del
-                     R{\'{i}}o and Mark Wiebe and Pearu Peterson and Pierre
-                     G{\'{e}}rard-Marchant and Kevin Sheppard and Tyler Reddy and
+                     Brett and Allan Haldane and Jaime Fernandez del
+                     Rio and Mark Wiebe and Pearu Peterson and Pierre
+                     Gerard-Marchant and Kevin Sheppard and Tyler Reddy and
                      Warren Weckesser and Hameer Abbasi and Christoph Gohlke and
                      Travis E. Oliphant}"
       type: article
@@ -78,7 +78,7 @@ references:
             Lukasz~Kaiser and
             Manjunath~Kudlur and
             Josh~Levenberg and
-            Dandelion~Man\'{e} and
+            Dandelion~Mane and
             Rajat~Monga and
             Sherry~Moore and
             Derek~Murray and
@@ -91,7 +91,7 @@ references:
             Paul~Tucker and
             Vincent~Vanhoucke and
             Vijay~Vasudevan and
-            Fernanda~Vi\'{e}gas and
+            Fernanda~Viegas and
             Oriol~Vinyals and
             Pete~Warden and
             Martin~Wattenberg and
