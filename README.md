@@ -55,3 +55,12 @@ The code may run using XLA (faster) using the following flag:
 
 where the correct cuda path and version have to be used.
 The Docker image runs XLA natively.
+
+# GPU
+The code runs on GPU natively using single precision. It was observed, that on
+some GPUs, which are not capable of double precision calculations, the BFGS
+algorithm used may interupt before the desired number of iterations is reached.
+In this case, either switch your GPU, use CPU computation or try mixed precision
+loss scaling described in 
+    https://www.tensorflow.org/guide/mixed_precision#loss_scaling
+There is no plan to tackle this problem in the next future.
