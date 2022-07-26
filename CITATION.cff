@@ -55,3 +55,54 @@ preferred-citation:
     year: "2022"
     type: "article"
 
+references:
+    - type: "article"
+      authors: 
+        - name: "Hunter, J. D."
+      title: "Matplotlib: A 2D graphics environment"
+      journal: "Computing in Science and Engineering"
+      volume: "9"
+      number: "3"
+      pages: "90--95"
+      publisher: 
+        name: "IEEE COMPUTER SOC"
+      doi: "10.1109/MCSE.2007.55"
+      year: "2007"
+      
+    - type: "article"
+      title: "Array programming with NumPy"
+      authors:
+        - name: "Charles R. Harris and K. Jarrod Millman and Stefan J.
+                 van der Walt and Ralf Gommers and Pauli Virtanen and David
+                 Cournapeau and Eric Wieser and Julian Taylor and Sebastian
+                 Berg and Nathaniel J. Smith and Robert Kern and Matti Picus
+                 and Stephan Hoyer and Marten H. van Kerkwijk and Matthew
+                 Brett and Allan Haldane and Jaime Fernandez del
+                 Rio and Mark Wiebe and Pearu Peterson and Pierre
+                 Gerard-Marchant and Kevin Sheppard and Tyler Reddy and
+                 Warren Weckesser and Hameer Abbasi and Christoph Gohlke and
+                 Travis E. Oliphant"
+      year: "2020"
+      month: "9"
+      journal: "Nature"
+      volume: "585"
+      number: "7825"
+      pages: "357--362"
+      doi: "10.1038/s41586-020-2649-2"
+      publisher:
+        name: "Springer Science and Business Media LLC"
+      url: "https://doi.org/10.1038/s41586-020-2649-2"
+
+    - type: "article"
+      authors:
+        - name: "Martín Abadi, Ashish Agarwal, Paul Barham, Eugene Brevdo,
+          Zhifeng Chen, Craig Citro, Greg S. Corrado, Andy Davis, Jeffrey Dean,
+          Matthieu Devin, Sanjay Ghemawat, Ian Goodfellow, Andrew Harp, Geoffrey
+          Irving, Michael Isard, Rafal Jozefowicz, Yangqing Jia, Lukasz Kaiser,
+          Manjunath Kudlur, Josh Levenberg, Dan Mané, Mike Schuster, Rajat
+          Monga, Sherry Moore, Derek Murray, Chris Olah, Jonathon Shlens, Benoit
+          Steiner, Ilya Sutskever, Kunal Talwar, Paul Tucker, Vincent Vanhoucke,
+          Vijay Vasudevan, Fernanda Viégas, Oriol Vinyals, Pete Warden, Martin
+          Wattenberg, Martin Wicke, Yuan Yu, and Xiaoqiang Zheng."
+      title: "TensorFlow: Large-Scale Machine Learning on Heterogeneous Systems"
+      url: "https://www.tensorflow.org/"
