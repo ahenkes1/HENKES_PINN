@@ -1,4 +1,7 @@
 # HENKES_PINN
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6913330.svg)](https://doi.org/10.5281/zenodo.6913330)
+
 Code of the publication "Physics informed neural networks for continuum micromechanics" published in https://doi.org/10.1016/j.cma.2022.114790 by Alexander Henkes and Henning Wessels from TU Braunschweig and Rolf Mahnken from University of Paderborn.
 
 Please cite the following paper:
