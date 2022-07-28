@@ -42,14 +42,14 @@ Build via
 
 Execute via
 
-    docker run --gpus all -it -v YOUR_LOCAL_OUTPUT_FOLDER:/home/docker_user/src/saved_nets/CPINN/ --rm henkes/pinn:1.0.0 --help
+    docker run --gpus all -it -v YOUR_LOCAL_OUTPUT_FOLDER:/home/docker_user/src/saved_nets/CPINN/ --rm ahenkes1/pinn:1.0.0 --help
 
 where 'YOUR_LOCAL_OUTPUT_FOLDER' is an absolute path to a directory on your 
 system. This will show the help.
 
 Execute the code using standard parameters as
 
-    docker run --gpus all -it -v YOUR_LOCAL_OUTPUT_FOLDER:/home/docker_user/src/saved_nets/CPINN/ --rm henkes/pinn:1.0.0 
+    docker run --gpus all -it -v YOUR_LOCAL_OUTPUT_FOLDER:/home/docker_user/src/saved_nets/CPINN/ --rm ahenkes1/pinn:1.0.0 
 
 # Using XLA
 The code may run using XLA (faster) using the following flag:
